@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}
+Liste des projets
+{% endblock %}
+{% block body %}
+
+<h1> Liste des projets ouverts </h1>
+Les projets avec budget >= {{budget}} et de status = {{statut}} sont<br>
+{% for ligne in projets %}
+{{ligne}}
+{% empty %}
+inexistants pour le moment
+{% endfor %}
+{% endblock %}

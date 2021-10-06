@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static my_tags %}
+{% block title %}
+Djagodeme | Liste des projets
+{% endblock %}
+{% block body %}
+<div class="wrapper">
+	<div class="box1">
+		<div class="line1">
+			<div class="line2 wrapper">
+				{% for projet in projets %}
+				{% if forloop.counter|modulo:3 == 1 %}
+				<section class="col1">
+					{% elif forloop.counter|modulo:3 == 2 %}
+					<section class="col1 pad_left1">
+						{% else %}
+						<section class="col1 pad_left1">
+							{% endif %}
+							<h2><strong>{{projet.nom|first}}</strong><span>{{projet.nom|reste}}</span></h2>
+							{% if projet.couverture %}
+							<div class="pad_bot1">
+								<figure><img src="{{projet.couverture.url}}" alt="" width="265px" height="120px">
+								</figure>
+							</div>
+							{% else %}
+							<div class="pad_bot1">
+								<figure><img src="{% static 'images/logo_r.jpg' %}" alt="" width="265px" height="120px">
+								</figure>
+							</div>
+							{% endif %}
+							{{projet.resume}}
+							<a href="{% url 'searchProjet' projet.id %}" class="button1">Plus d'info</a>
+						</section>
+						{% if forloop.counter|divisibleby:3 %}
+			</div>
+		</div>
+		<div class="line1">
+			<div class="line2 wrapper">
+				{% endif %}
+				{% empty %}
+				Aucun projet pour le moment
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static my_tags %}
+{% block title %}
+    Djagodeme | Liste des projets
+{% endblock %}
+{% block body %}
+    {% if find == 1 %}
+        <p> Un projet trouvé, les infos sont : <strong> {{ligne}} </strong> </p>
+    {% else %}
+        <p> Le projet d'id <strong> {{id_projet}} </strong> n'existe pas </p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}
+    Inscription
+{% endblock %}
+{% block connexion_top %}
+    <li><a href="{% url 'connexion' %}">Log in</a></li>
+{% endblock %}
+{% block body %}
+    {% if not erreur %}
+        <center>
+            Votre compte a été créé avec succès. <br>
+            Veuillez vous connectez pour completer les informations. <br>
+            <a href="{% url 'connexion' %}"> Se connecter </a>
+        </center>
+    {% else %}
+        <h2>Remplissez ces informations pour vous inscrire </h2>
+        <form action="{% url 'inscription' %}" method="post">
+            {% csrf_token %}
+            {% for field in form %}
+                <div class="form-group">
+                {{ field.label }}: {{ field }} <br>
+                </div>
+            {% endfor %}
+            {# {{ form.as_p }} #}
+            <p> <input type="submit" value="Sign in" /> &nbsp; &nbsp;
+                <a href="{% url 'connexion' %}"> J'ai déjà un compte </a>
+            </p>
+        </form>
+    {% endif %}
+{% endblock %}

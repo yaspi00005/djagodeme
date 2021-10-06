@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Connexion
+{% endblock %}
+
+{% block connexion_top %}
+    {% if user.is_authenticated %}
+        <li><a href="{% url 'deconnexion' %}">Log out</a></li>
+    {% else %}
+        <li><a href="{% url 'connexion' %}">Log in</a></li>
+    {% endif %}
+{% endblock %}
+
+
+{% block body %}
+    {% if erreur %}
+        <h1>Bienvenue sur Djago dèmè</h1>
+        <h2> Désolé, login inconnu ou mot de passe incorrecte. Veuillez reessayer.</h2>
+    {% else %}
+        <h1> Bienvenue sur Djago dèmè ! </h1>
+        <p> Connectez-vous et découvrez les projets ouverts et/ou en créer. </p>
+        <form action="{% url 'connexion' %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <p> <input type="submit" value="Log in" /> &nbsp; &nbsp;
+                <a href="."> Mot de passe oublié </a> &nbsp; &nbsp;
+                <a href="."> Créer un compte </a>
+            </p>
+        </form>
+    {% endif %}
+{% endblock %}
