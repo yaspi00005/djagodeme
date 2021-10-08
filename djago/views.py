@@ -56,6 +56,7 @@ def connexion(request):
             return redirect(lister_projets, budget=0, statut='SDI')
         else:
             erreur = True
+
     return render(request, "djago/connexion.html", locals())
 
 
