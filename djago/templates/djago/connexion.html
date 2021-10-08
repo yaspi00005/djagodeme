@@ -23,7 +23,7 @@ Connexion
                         <div class="heading">
                             <h3 class="text-center">Connectez-vous à votre compte</h3>
                             <p class="text-center">Vous n'avez pas de compte ? S'inscrire! <a class="text-thm"
-                                    href="page-register.html">Sign Up!</a></p>
+                                    href="{% url 'inscription' %}">Sign Up!</a></p>
                         </div>
                         {% csrf_token %}
                         <div class="form-group">

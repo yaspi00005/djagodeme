@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 {% load static %}
+<!DOCTYPE html>
 <html dir="ltr" lang="en">
 
 <head>
@@ -7,16 +7,16 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="keywords"
-		content="advanced custom search, agency, agent, business, clean, corporate, directory, google maps, homes, idx agent, listing properties, membership packages, property, real broker, real estate, real estate agent, real estate agency, realtor">
-	<meta name="description" content="Djago dèmè - Real Estate HTML Template">
+		content="advanced search custom, agency, agent, business, clean, corporate, directory, google maps, homes, listing, membership packages, property, real estate, real estate agent, realestate agency, realtor">
+	<meta name="description" content="Djago déme - Real Estate HTML Template">
 	<meta name="CreativeLayers" content="ATFN">
-	<!-- css file -->
+
 	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 	<!-- Responsive stylesheet -->
 	<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
 	<!-- Title -->
-	<title>Djago dèmè - Real Estate HTML Template</title>
+	<title>Djago déme - Real Estate HTML Template</title>
 	<!-- Favicon -->
 	<link href="images/favicon.ico" sizes="128x128" rel="shortcut icon" type="image/x-icon" />
 	<link href="images/favicon.ico" sizes="128x128" rel="shortcut icon" />
@@ -34,14 +34,13 @@
 		<div class="preloader"></div>
 
 		<!-- Main Header Nav -->
-		<header class="header-nav menu_style_home_one home4 navbar-scrolltofixed stricky main-menu">
+		<header class="header-nav menu_style_home_one style2 navbar-scrolltofixed stricky main-menu">
 			<div class="container-fluid p0">
 				<!-- Ace Responsive Menu -->
 				<nav>
 					<!-- Menu Toggle btn-->
 					<div class="menu-toggle">
-						<img class="nav_logo_img img-fluid" src="{% static 'images/header-logo.png' %}"
-							alt="header-logo.png">
+						<img class="nav_logo_img img-fluid" src="images/header-logo.png" alt="header-logo.png">
 						<button type="button" id="menu-btn">
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
@@ -49,30 +48,160 @@
 						</button>
 					</div>
 					<a href="#" class="navbar_brand float-left dn-smd">
-						<img class="logo1 img-fluid" src="{% static 'images/header-logo.png' %}" alt="header-logo.png">
-						<img class="logo2 img-fluid" src="{% static 'images/header-logo2.png'  %}"
-							alt="header-logo2.png">
-						<span>Djago dèmè</span>
+						<img class="logo1 img-fluid" src="images/header-logo2.png" alt="header-logo.png">
+						<img class="logo2 img-fluid" src="images/header-logo2.png" alt="header-logo2.png">
+						<span>Djago déme</span>
 					</a>
 					<!-- Responsive Menu Structure-->
 					<!--Note: declare the Menu style in the data-menu-style="horizontal" (options: horizontal, vertical, accordion) -->
 					<ul id="respMenu" class="ace-responsive-menu text-right" data-menu-style="horizontal">
 						<li>
-							<a href="{% url 'accueil' %}"><span class="title">Accueil</span></a>
+							<a href="#"><span class="title">Home</span></a>
+							<!-- Level Two-->
+							<ul>
+								<li><a href="index.html">Home 1</a></li>
+								<li><a href="index2.html">Home 2</a></li>
+								<li><a href="index3.html">Home 3</a></li>
+								<li><a href="index4.html">Home 4</a></li>
+								<li><a href="index5.html">Home 5</a></li>
+								<li><a href="index6.html">Home 6</a></li>
+								<li><a href="index7.html">Home 7</a></li>
+								<li><a href="index8.html">Home 8</a></li>
+								<li><a href="index9.html">Home 9</a></li>
+								<li><a href="index10.html">Home 10</a></li>
+							</ul>
 						</li>
 						<li>
-							<a href="#"><span class="title">Notre Missions</span></a>
+							<a href="#"><span class="title">Listing</span></a>
+							<!-- Level Two-->
+							<ul>
+								<li>
+									<a href="#">Listing Grid</a>
+									<!-- Level Three-->
+									<ul>
+										<li><a href="page-listing-grid-v1.html">Grid v1</a></li>
+										<li><a href="page-listing-grid-v2.html">Grid v2</a></li>
+										<li><a href="page-listing-grid-v3.html">Grid v3</a></li>
+										<li><a href="page-listing-grid-v4.html">Grid v4</a></li>
+										<li><a href="page-listing-grid-v5.html">Grid v5</a></li>
+										<li><a href="page-listing-full-width-grid.html">Grid Fullwidth</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">Listing List</a>
+									<!-- Level Three-->
+									<ul>
+										<li><a href="page-listing-list.html">List V1</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">Listing Style</a>
+									<!-- Level Three-->
+									<ul>
+										<li><a href="page-listing-parallax.html">Parallax Style</a></li>
+										<li><a href="page-listing-slider.html">Slider Style</a></li>
+										<li><a href="page-listing-map.html">Map Header</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">Listing Half</a>
+									<!-- Level Three-->
+									<ul>
+										<li><a href="page-listing-half-map-v1.html">Map V1</a></li>
+										<li><a href="page-listing-half-map-v2.html">Map V2</a></li>
+										<li><a href="page-listing-half-map-v3.html">Map V3</a></li>
+										<li><a href="page-listing-half-map-v4.html">Map V4</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">Agent View</a>
+									<!-- Level Three-->
+									<ul>
+										<li><a href="page-listing-agent-v1.html">Agent V1</a></li>
+										<li><a href="page-listing-agent-v2.html">Agent V2</a></li>
+										<li><a href="page-listing-agent-v3.html">Agent Details</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">Agencies View</a>
+									<!-- Level Three-->
+									<ul>
+										<li><a href="page-listing-agencies-v1.html">Agencies V1</a></li>
+										<li><a href="page-listing-agencies-v2.html">Agencies V2</a></li>
+										<li><a href="page-listing-agencies-v3.html">Agencies Details</a></li>
+									</ul>
+								</li>
+								<li><a href="page-add-new-property.html">Create Listing</a></li>
+							</ul>
 						</li>
 						<li>
-							<a href="{% url 'listeTousProjets' %}"><span class="title">Projets</span></a>
+							<a href="#"><span class="title">Property</span></a>
+							<ul>
+								<li>
+									<a href="#">User Admin</a>
+									<ul>
+										<li><a href="page-dashboard.html">Dashboard</a></li>
+										<li><a href="page-my-properties.html">My Properties</a></li>
+										<li><a href="page-message.html">My Message</a></li>
+										<li><a href="page-my-review.html">My Review</a></li>
+										<li><a href="page-my-favorites.html">My Favorites</a></li>
+										<li><a href="page-add-new-property.html">Add Property</a></li>
+										<li><a href="page-my-profile.html">My Profile</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="#">Listing Single</a>
+									<!-- Level Three-->
+									<ul>
+										<li><a href="page-listing-single-v1.html">Single V1</a></li>
+										<li><a href="page-listing-single-v2.html">Single V2</a></li>
+										<li><a href="page-listing-single-v3.html">Single V3</a></li>
+										<li><a href="page-listing-single-v4.html">Single V4</a></li>
+										<li><a href="page-listing-single-v5.html">Single V5</a></li>
+									</ul>
+								</li>
+								<li><a href="page-add-new-property.html">Create Listing</a></li>
+							</ul>
 						</li>
-
-
+						<li>
+							<a href="#"><span class="title">Pages</span></a>
+							<ul>
+								<li>
+									<a href="#"><span class="title">Pages</span></a>
+									<ul>
+										<li><a href="page-shop.html">Shop</a></li>
+										<li><a href="page-shop-single.html">Shop Single</a></li>
+										<li><a href="page-shop-cart.html">Cart</a></li>
+										<li><a href="page-shop-checkout.html">Checkout</a></li>
+										<li><a href="page-shop-order.html">Order</a></li>
+									</ul>
+								</li>
+								<li><a href="page-about.html">About Us</a></li>
+								<li><a href="page-gallery.html">Gallery</a></li>
+								<li><a href="page-faq.html">Faq</a></li>
+								<li><a href="page-login.html">LogIn</a></li>
+								<li><a href="page-compare.html">Membership</a></li>
+								<li><a href="page-compare2.html">Membership 2</a></li>
+								<li><a href="page-register.html">Register</a></li>
+								<li><a href="page-service.html">Service</a></li>
+								<li><a href="page-error.html">404 Page</a></li>
+								<li><a href="page-terms.html">Terms and Conditions</a></li>
+								<li><a href="page-ui-element.html">UI Elements</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#"><span class="title">Blog</span></a>
+							<ul>
+								<li><a href="page-blog-v1.html">Blog List 1</a></li>
+								<li><a href="page-blog-grid.html">Blog List 2</a></li>
+								<li><a href="page-blog-single.html">Single Post</a></li>
+							</ul>
+						</li>
 						<li class="last">
-							<a href="contact.html"><span class="title">Contact</span></a>
+							<a href="page-contact.html"><span class="title">Contact</span></a>
 						</li>
-						<li class="list-inline-item list_s"><a href="{% url 'connexion' %}" class="btn flaticon-user"
-								data-toggle=""> <span class="dn-lg">S'identifier/S'enregistrer</span></a></li>
+						<li class="list-inline-item list_s"><a href="#" class="btn flaticon-user" data-toggle="modal"
+								data-target=".bd-example-modal-lg"> <span class="dn-lg">Login/Register</span></a></li>
 						<li class="list-inline-item add_listing"><a href="page-add-new-property.html"><span
 									class="flaticon-plus"></span><span class="dn-lg"> Create Listing</span></a></li>
 					</ul>
@@ -161,8 +290,7 @@
 								aria-labelledby="profile-tab">
 								<div class="col-lg-6 col-xl-6">
 									<div class="regstr_thumb">
-										<img class="img-fluid w100" src="{% static 'images/resource/regstr.jpg' %}"
-											alt="regstr.jpg">
+										<img class="img-fluid w100" src="images/resource/regstr.jpg" alt="regstr.jpg">
 									</div>
 								</div>
 								<div class="col-lg-6 col-xl-6">
@@ -244,9 +372,8 @@
 			<div class="mobile-menu">
 				<div class="header stylehome1">
 					<div class="main_logo_home2 text-center">
-						<img class="nav_logo_img img-fluid mt20" src="{% static 'images/header-logo2.png' %}"
-							alt="header-logo2.png">
-						<span class="mt20">Djago dèmè</span>
+						<img class="nav_logo_img img-fluid mt20" src="images/header-logo2.png" alt="header-logo2.png">
+						<span class="mt20">Djago déme</span>
 					</div>
 					<ul class="menu_bar_home2">
 						<li class="list-inline-item list_s"><a href="page-register.html"><span
@@ -257,7 +384,7 @@
 			</div><!-- /.mobile-menu -->
 			<nav id="menu" class="stylehome1">
 				<ul>
-					<li><span>Accueil</span>
+					<li><span>Home</span>
 						<ul>
 							<li><a href="index.html">Home 1</a></li>
 							<li><a href="index2.html">Home 2</a></li>
@@ -374,86 +501,118 @@
 			</nav>
 		</div>
 
-		<!-- 4th Home Slider -->
-		<div class="home-four">
-			<div class="container-fluid p0">
+		<!-- Inner Page Breadcrumb -->
+		<section class="inner_page_breadcrumb">
+			<div class="container">
 				<div class="row">
-					<div class="col-lg-12">
-						<div class="main-banner-wrapper">
-							<div class="banner-style-one owl-theme owl-carousel">
-								<div class="slide slide-one"
-									style="background-image: url(static/images/home/aide.jpg);height: 800px;"></div>
-								<div class="slide slide-one"
-									style="background-image: url(images/home/aide1.jpg);height: 800px;"></div>
-								<div class="slide slide-one"
-									style="background-image: url(images/home/3.jpg);height: 800px;"></div>
-							</div>
-							<div class="carousel-btn-block banner-carousel-btn">
-								<span class="carousel-btn left-btn"><i class="flaticon-left-arrow-1 left"></i></span>
-								<span class="carousel-btn right-btn"><i class="flaticon-right-arrow right"></i></span>
-							</div><!-- /.carousel-btn-block banner-carousel-btn -->
-						</div><!-- /.main-banner-wrapper -->
-					</div>
-				</div>
-			</div>
-			<div class="container home_iconbox_container">
-				<div class="row posr">
-					<div class="col-lg-12">
-						<div class="home_content home4">
-							<div class="home-text text-center">
-								<h2 class="fz55">Aide financière</h2>
-								<p class="fz18 color-white">Trouvez des financements pour votre projet.</p>
-							</div>
-							<div class="home_adv_srch_opt home4">
-								<ul class="nav nav-pills" id="pills-tab" role="tablist">
-									<li class="nav-item">
-										<a class="nav-link active" id="pills-home-tab" data-toggle="pill"
-											href="#pills-home" role="tab" aria-controls="pills-home"
-											aria-selected="true">Buy</a>
-									</li>
-									<li class="nav-item">
-										<a class="nav-link" id="pills-profile-tab" data-toggle="pill"
-											href="#pills-profile" role="tab" aria-controls="pills-profile"
-											aria-selected="false">Rent</a>
-									</li>
-								</ul>
-
-							</div>
+					<div class="col-xl-6">
+						<div class="breadcrumb_content">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="#">Home</a></li>
+								<li class="breadcrumb-item active" aria-current="page">Contact</li>
+							</ol>
+							<h4 class="breadcrumb_title">Contact Us</h4>
 						</div>
 					</div>
 				</div>
+			</div>
+		</section>
+
+		<!-- Our Contact -->
+		<section class="our-contact pb0 bgc-f7">
+			<div class="container">
 				<div class="row">
-					<div class="col-lg-12">
-						<h4 class="text-center color-white fw600 mb25 mb0-520">Que cherchez-vous ?</h4>
-						<ul class="home4_iconbox mb0">
-							<li class="list-inline-item">
-								<div class="icon"><span class="flaticon-house"></span>
-									<p>Faire un don</p>
+					<div class="col-lg-7 col-xl-8">
+						<div class="form_grid">
+							<h4 class="mb5">Send Us An Email</h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In gravida quis libero eleifend
+								ornare. Maecenas mattis enim at arcu feugiat, sit amet blandit nisl iaculis. Donec lacus
+								odio, malesuada eu libero sit amet, congue aliquam leo. In hac habitasse platea
+								dictumst.</p>
+							<form class="contact_form" id="contact_form" name="contact_form" action="#" method="post"
+								novalidate="novalidate">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="form-group">
+											<input id="form_name" name="form_name" class="form-control"
+												required="required" type="text" placeholder="Name">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<input id="form_email" name="form_email" class="form-control required email"
+												required="required" type="email" placeholder="Email">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<input id="form_phone" name="form_phone" class="form-control required phone"
+												required="required" type="phone" placeholder="Phone">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<input id="form_subject" name="form_subject" class="form-control required"
+												required="required" type="text" placeholder="Subject">
+										</div>
+									</div>
+									<div class="col-sm-12">
+										<div class="form-group">
+											<textarea id="form_message" name="form_message"
+												class="form-control required" rows="8" required="required"
+												placeholder="Your Message"></textarea>
+										</div>
+										<div class="form-group mb0">
+											<button type="button" class="btn btn-lg btn-thm">Send Message</button>
+										</div>
+									</div>
 								</div>
-							</li>
-							<li class="list-inline-item">
-								<div class="icon"><span class="flaticon-house-1"></span>
-									<p>Nous rejoindre</p>
-								</div>
-							</li>
-							<li class="list-inline-item">
-								<div class="icon"><span class="flaticon-house-2"></span>
-									<p>---</p>
-								</div>
-							</li>
-							<li class="list-inline-item">
-								<div class="icon"><span class="flaticon-building"></span>
-									<p>------</p>
-								</div>
-							</li>
-						</ul>
+							</form>
+						</div>
+					</div>
+					<div class="col-lg-5 col-xl-4">
+						<div class="contact_localtion">
+							<h4>Contact Us</h4>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In gravida quis libero eleifend
+								ornare. habitasse platea dictumst.</p>
+							<div class="content_list">
+								<h5>Address</h5>
+								<p>2301 Ravenswood Rd Madison, <br>WI 53711</p>
+							</div>
+							<div class="content_list">
+								<h5>Phone</h5>
+								<p>(315) 905-2321</p>
+							</div>
+							<div class="content_list">
+								<h5>Mail</h5>
+								<p>info@Djago déme.com</p>
+							</div>
+							<div class="content_list">
+								<h5>Skype</h5>
+								<p>Djago déme.com</p>
+							</div>
+							<h5>Follow Us</h5>
+							<ul class="contact_form_social_area">
+								<li class="list-inline-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li class="list-inline-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li class="list-inline-item"><a href="#"><i class="fa fa-instagram"></i></a></li>
+								<li class="list-inline-item"><a href="#"><i class="fa fa-google"></i></a></li>
+								<li class="list-inline-item"><a href="#"><i class="fa fa-pinterest"></i></a></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+			<div class="container-fluid p0 mt50">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="h600" id="map-canvas"></div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-		{% block body %}
-		{% endblock %}
+		<!-- Start Partners -->
 
 		<!-- Our Footer -->
 		<section class="footer_one">
@@ -482,7 +641,7 @@
 						<div class="footer_contact_widget">
 							<h4>Contact Us</h4>
 							<ul class="list-unstyled">
-								<li><a href="#">info@Djago dèmè.com</a></li>
+								<li><a href="#">info@Djago déme.com</a></li>
 								<li><a href="#">Collins Street West, Victoria</a></li>
 								<li><a href="#">8007, Australia.</a></li>
 								<li><a href="#">+1 246-345-0699</a></li>
@@ -521,7 +680,7 @@
 		</section>
 
 		<!-- Our Footer Bottom Area -->
-		<section class="footer_middle_area pt30 pb30">
+		<section class="footer_middle_area pt40 pb40">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6 col-xl-6">
@@ -566,7 +725,10 @@
 	<script type="text/javascript" src="{% static 'js/timepicker.js'  %}"></script>
 	<!-- Custom script for all pages -->
 	<script type="text/javascript" src="{% static 'js/script.js'  %}"></script>
-	<script type="text/javascript" src="{% static 'js/form.js'  %}"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAz77U5XQuEME6TpftaMdX0bBelQxXRlM&callback=initMap"
+		type="text/javascript"></script>
+	<script type="text/javascript" src="{% static 'js/googlemaps1.js' %}"></script>
+	<!-- Custom script for all pages -->
 </body>
 
 </html>

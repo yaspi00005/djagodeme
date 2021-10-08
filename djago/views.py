@@ -91,3 +91,9 @@ def creerProjet(request):
         form.save()
         return redirect(lister_projets, budget=0, statut='SDI')
     return render(request, "djago/creationProjet.html", locals())
+
+
+
+def contact(request):
+    
+    return render(request, "djago/contact.html", locals())
