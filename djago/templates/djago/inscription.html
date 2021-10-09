@@ -22,7 +22,7 @@ Inscription
                         <div class="ui_kit_message_box">
                             <div class="alert alart_style_three alert-dismissible fade show" role="alert">
                                 Votre compte a été créé avec succès.Veuillez vous connectez pour completer les
-                                informations. <br>
+                                informations
                                 <a href="{% url 'connexion' %}"> Se connecter </a>
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
@@ -61,13 +61,27 @@ Inscription
                                     <button type="submit" class="btn btn-block color-white bgc-fb mb0"><i
                                             class="fa fa-facebook float-left mt5"></i> Facebook</button>
                                 </div>
-                                <div class="col-lg">
-                                    <button type="submit" class="btn btn2 btn-block color-white bgc-gogle mb0"><i
-                                            class="fa fa-google float-left mt5"></i> Google</button>
+                                <div class="form-group">
+                                    <!--  <input type="password" class="form-control" id="exampleInputPassword4"
+                                        placeholder="Password"> -->
+                                    {{ form.password1 }}
                                 </div>
-                            </div>
+                                <div class="form-group">
+                                    <!--  <input type="password" class="form-control" id="exampleInputPassword5"
+                                        placeholder="Confirm Password"> -->
+                                    {{ form.password2 }}
+                                </div>
+                                <button type="submit" class="btn btn-log btn-block btn-thm2">S'inscrire</button>
                         </form>
                     </div>
+                    {% else %}
+
+                    <div class="heading">
+                        <h3 class="text-center">Votre compte a été créé avec succès.</h3>
+                        <p class="text-center">Veuillez vous connectez pour completer les informations.<a
+                                href="{% url 'connexion' %}"> Se connecter </a></p>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
         </div>

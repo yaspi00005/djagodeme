@@ -56,6 +56,7 @@ def connexion(request):
             return redirect(lister_projets, budget=0, statut='SDI')
         else:
             erreur = True
+
     return render(request, "djago/connexion.html", locals())
 
 
@@ -95,6 +96,38 @@ def creerProjet(request):
     return render(request, "djago/creationProjet.html", locals())
 
 
-def contact(request):
+@login_required(login_url="accueil")
+def edit_profil(request):
+    form = ProfilForm(request.POST or None)
+    from .models import Utilisateur
+    user = request.user
+    ligne = Utilisateur.objects.get(user=request.user)
+    # print(ligne)
+    # form.login = ligne.request.user.username
+    form.fields["login"].initial = request.user.username
+    form.fields["email"].initial = request.user.email
+    form.fields["numid"].initial = ligne.numid
+    form.fields["pieceid"].initial = ligne.pieceid
+    form.fields["adresse"].initial = ligne.adresse
+    form.fields["tel"].initial = ligne.tel
+    form.fields["photo"].initial = ligne.photo
 
+    if form.is_valid():
+        user.email = form.cleaned_data["email"]
+        user.username = form.cleaned_data["login"]
+        user.save()
+        ligne.numid = form.cleaned_data["numid"]
+        ligne.pieceid = form.cleaned_data["pieceid"]
+        ligne.adresse = form.cleaned_data["adresse"]
+        ligne.tel = form.cleaned_data["tel"]
+        ligne.photo = form.cleaned_data["photo"]
+        ligne.save()
+        # form.save()
+        return redirect(accueil)
+    return render(request, "djago/profile.html", locals())
+
+    return HttpResponse(request)
+
+
+def contact(request):
     return render(request, "djago/contact.html", locals())
