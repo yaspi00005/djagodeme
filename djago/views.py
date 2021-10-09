@@ -2,9 +2,11 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import ConnectForm
 from .forms import CreerProjetForm
+from .forms import ProfilForm
 from django.contrib.auth.decorators import login_required
 from .forms import InscriptionForm
 from django.contrib.auth import logout
+
 
 # Create your views here.
 
@@ -65,9 +67,10 @@ def chercher_projet(request, id_projet):
     from .models import Projet
     try:
         ligne = Projet.objects.get(id=id_projet)
-        return render(request, 'djago/chercher_projet.html', {'find':1, 'ligne':ligne})
+        return render(request, 'djago/chercher_projet.html', {'find': 1, 'ligne': ligne})
     except models.ObjectDoesNotExist:
-        return render(request, 'djago/chercher_projet.html', {'find':0, 'id_projet':id_projet})
+        return render(request, 'djago/chercher_projet.html', {'find': 0, 'id_projet': id_projet})
+
 
 def lister_projets(request, budget, statut='C'):
     from django.http import Http404
@@ -78,10 +81,12 @@ def lister_projets(request, budget, statut='C'):
         projets = Projet.objects.filter(budget__gte=budget, statut=statut)
         return render(request, 'djago/lister_projets.html', locals())
 
+
 def liste_tous_projets(request):
     from .models import Projet
     projets = Projet.objects.all()
     return render(request, 'djago/listeTousProjets.html', locals())
+
 
 @login_required(login_url="accueil")
 def creerProjet(request):
@@ -91,3 +96,40 @@ def creerProjet(request):
         form.save()
         return redirect(lister_projets, budget=0, statut='SDI')
     return render(request, "djago/creationProjet.html", locals())
+
+
+@login_required(login_url="accueil")
+def edit_profil(request):
+    form = ProfilForm(request.POST or None)
+    from .models import Utilisateur
+    user = request.user
+    ligne = Utilisateur.objects.get(user=request.user)
+    # print(ligne)
+    # form.login = ligne.request.user.username
+    form.fields["login"].initial = request.user.username
+    form.fields["email"].initial = request.user.email
+    form.fields["numid"].initial = ligne.numid
+    form.fields["pieceid"].initial = ligne.pieceid
+    form.fields["adresse"].initial = ligne.adresse
+    form.fields["tel"].initial = ligne.tel
+    form.fields["photo"].initial = ligne.photo
+
+    if form.is_valid():
+        user.email = form.cleaned_data["email"]
+        user.username = form.cleaned_data["login"]
+        user.save()
+        ligne.numid = form.cleaned_data["numid"]
+        ligne.pieceid = form.cleaned_data["pieceid"]
+        ligne.adresse = form.cleaned_data["adresse"]
+        ligne.tel = form.cleaned_data["tel"]
+        ligne.photo = form.cleaned_data["photo"]
+        ligne.save()
+        #form.save()
+        return redirect(accueil)
+    return render(request, "djago/profile.html", locals())
+
+    return HttpResponse(request)
+
+
+def contact(request):
+    return render(request, "djago/contact.html", locals())
