@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block body %}
+    <h1> Edition du profil !</h1>
+    <p> </p>
+    <form action="{% url 'profile' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p>
+    <input type="submit" value="Modifier" />
+    </p>
+    </form>
+{% endblock %}

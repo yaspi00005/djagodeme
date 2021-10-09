@@ -71,10 +71,16 @@
 						<li class="last">
 							<a href="contact.html"><span class="title">Contact</span></a>
 						</li>
-						<li class="list-inline-item list_s"><a href="{% url 'connexion' %}" class="btn flaticon-user"
-								data-toggle=""> <span class="dn-lg">S'identifier/S'enregistrer</span></a></li>
-						<li class="list-inline-item add_listing"><a href="page-add-new-property.html"><span
-									class="flaticon-plus"></span><span class="dn-lg"> Create Listing</span></a></li>
+						{% if user.is_authenticated %}
+							<li class="list-inline-item list_s"><a href="{% url 'profile' %}" class="btn flaticon-user"
+								data-toggle=""> <span class="dn-lg">Profil</span></a></li>
+
+        					<li class="list-inline-item list_s"><a href="{% url 'deconnexion' %}" class="btn flaticon-logout"
+								data-toggle=""> <span class="dn-lg">Log Out</span></a></li>
+    					{% else %}
+        					<li class="list-inline-item list_s"><a href="{% url 'connexion' %}" class="btn flaticon-login"
+								data-toggle=""> <span class="dn-lg">Log In</span></a></li>
+   						 {% endif %}
 					</ul>
 				</nav>
 			</div>
@@ -375,6 +381,7 @@
 		</div>
 
 		<!-- 4th Home Slider -->
+		{% block aide_block %}
 		<div class="home-four">
 			<div class="container-fluid p0">
 				<div class="row">
@@ -396,6 +403,7 @@
 					</div>
 				</div>
 			</div>
+
 			<div class="container home_iconbox_container">
 				<div class="row posr">
 					<div class="col-lg-12">
@@ -438,7 +446,7 @@
 							</li>
 							<li class="list-inline-item">
 								<div class="icon"><span class="flaticon-house-2"></span>
-									<p>---</p>
+									<p>Teste</p>
 								</div>
 							</li>
 							<li class="list-inline-item">
@@ -450,8 +458,9 @@
 					</div>
 				</div>
 			</div>
-		</div>
 
+		</div>
+		{% endblock %}
 		{% block body %}
 		{% endblock %}
 
