@@ -1,12 +1,93 @@
 {% extends "base.html" %}
 {% load static my_tags %}
 {% block title %}
-    Djagodeme | Liste des projets
+Djagodeme | Liste des projets
 {% endblock %}
 {% block body %}
-    {% if find == 1 %}
-        <p> Un projet trouvé, les infos sont : <strong> {{ligne}} </strong> </p>
-    {% else %}
-        <p> Le projet d'id <strong> {{id_projet}} </strong> n'existe pas </p>
-    {% endif %}
+{% if find == 1 %}
+
+<section class="blog_post_container bgc-f7">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6">
+                <div class="breadcrumb_content style2">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active text-thm" aria-current="page">Simple Listing – Grid View</li>
+                    </ol>
+                    <h2 class="breadcrumb_title">{{ligne.nom}}</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="main_blog_post_content">
+                    <div class="for_blog feat_property">
+                        <div class="thumb">
+                            {% if ligne.couverture %}
+                            <img class="img-whp" src="{{ligne.couverture.url}}" alt="fp1.jpg">
+                            {% else %}
+                            <img class="img-whp" src="{% static 'images/logo_r.jpg' %}" alt="">
+                            {% endif %}
+                            <div class="blog_tag">{{ligne.secteur}}</div>
+                        </div>
+                        <div class="details">
+                            <div class="tc_content">
+                                <h4 class="mb15">{{ligne.budget}} Fcfa </h4>
+                                <p>{{ligne.resume}}.</p>
+                            </div>
+                            <div class="fp_footer">
+                                <ul class="fp_meta float-left mb0">
+                                    <li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png"
+                                                alt="pposter1.png"></a></li>
+                                    <li class="list-inline-item"><a href="#">{{ligne.user.nom}}</a></li>
+                                    <li class="list-inline-item"><a href="#"><span
+                                                class="flaticon-calendar pr10"></span> {{ligne.date_pub}}</a></li>
+                                </ul>
+                                <a class="fp_pdate float-right text-thm" href="#">Read More <span
+                                        class="flaticon-next"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-xl-4">
+                <div class="terms_condition_widget">
+                    <h4 class="title">Categories Property</h4>
+                    <div class="widget_list">
+                        <ul class="list_details">
+                            <li><a href="#"><i class="fa fa-caret-right mr10"></i>Don <span
+                                        class="float-right">{{ligne.Investisseurs}}
+                                    </span></a></li>
+                            <li><a href="#"><i class="fa fa-caret-right mr10"></i>Condo <span class="float-right">12
+                                        properties</span></a></li>
+                            <li><a href="#"><i class="fa fa-caret-right mr10"></i>Family House <span
+                                        class="float-right">8 properties</span></a></li>
+                            <li><a href="#"><i class="fa fa-caret-right mr10"></i>Modern Villa <span
+                                        class="float-right">26 properties</span></a></li>
+                            <li><a href="#"><i class="fa fa-caret-right mr10"></i>Town House <span
+                                        class="float-right">89 properties</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="blog_tag_widget">
+                    <h4 class="title">Tags</h4>
+                    <ul class="tag_list">
+                        <li class="list-inline-item"><a href="#">Apartment</a></li>
+                        <li class="list-inline-item"><a href="#">Real Estate</a></li>
+                        <li class="list-inline-item"><a href="#">Estate</a></li>
+                        <li class="list-inline-item"><a href="#">Luxury</a></li>
+                        <li class="list-inline-item"><a href="#">Real</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<a class="scrollToHome" href="#"><i class="flaticon-arrows"></i></a>
+<p> Un projet trouvé, les infos sont : <strong> {{ligne.nom}} </strong> </p>
+{% else %}
+<p> Le projet d'id <strong> {{id_projet}} </strong> n'existe pas </p>
+{% endif %}
 {% endblock %}

@@ -2,12 +2,10 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import ConnectForm
 from .forms import CreerProjetForm
-from .forms import ProfilForm
 from django.contrib.auth.decorators import login_required
 from .forms import InscriptionForm
 from django.contrib.auth import logout
-
-
+from deme.models import Don
 # Create your views here.
 
 
@@ -124,7 +122,7 @@ def edit_profil(request):
         ligne.tel = form.cleaned_data["tel"]
         ligne.photo = form.cleaned_data["photo"]
         ligne.save()
-        #form.save()
+        # form.save()
         return redirect(accueil)
     return render(request, "djago/profile.html", locals())
 
