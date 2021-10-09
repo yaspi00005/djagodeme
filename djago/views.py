@@ -5,7 +5,7 @@ from .forms import CreerProjetForm
 from django.contrib.auth.decorators import login_required
 from .forms import InscriptionForm
 from django.contrib.auth import logout
-
+from deme.models import Don
 # Create your views here.
 
 
@@ -64,9 +64,10 @@ def chercher_projet(request, id_projet):
     from .models import Projet
     try:
         ligne = Projet.objects.get(id=id_projet)
-        return render(request, 'djago/chercher_projet.html', {'find':1, 'ligne':ligne})
+        return render(request, 'djago/chercher_projet.html', {'find': 1, 'ligne': ligne})
     except models.ObjectDoesNotExist:
-        return render(request, 'djago/chercher_projet.html', {'find':0, 'id_projet':id_projet})
+        return render(request, 'djago/chercher_projet.html', {'find': 0, 'id_projet': id_projet})
+
 
 def lister_projets(request, budget, statut='C'):
     from django.http import Http404
@@ -77,10 +78,12 @@ def lister_projets(request, budget, statut='C'):
         projets = Projet.objects.filter(budget__gte=budget, statut=statut)
         return render(request, 'djago/lister_projets.html', locals())
 
+
 def liste_tous_projets(request):
     from .models import Projet
     projets = Projet.objects.all()
     return render(request, 'djago/listeTousProjets.html', locals())
+
 
 @login_required(login_url="accueil")
 def creerProjet(request):
@@ -92,7 +95,6 @@ def creerProjet(request):
     return render(request, "djago/creationProjet.html", locals())
 
 
-
 def contact(request):
-    
+
     return render(request, "djago/contact.html", locals())

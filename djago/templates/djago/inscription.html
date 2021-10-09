@@ -7,6 +7,7 @@ Inscription
 {% endblock %}
 {% block body %}
 <section class="our-log-reg bgc-fa">
+
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-lg-6 offset-lg-3">
@@ -18,10 +19,16 @@ Inscription
                     </div>
                     <div class="details">
                         {% if not erreur %}
-                        Votre compte a été créé avec succès. <br>
-                        Veuillez vous connectez pour completer les informations. <br>
-                        <a href="{% url 'connexion' %}"> Se connecter </a>
-
+                        <div class="ui_kit_message_box">
+                            <div class="alert alart_style_three alert-dismissible fade show" role="alert">
+                                Votre compte a été créé avec succès.Veuillez vous connectez pour completer les
+                                informations. <br>
+                                <a href="{% url 'connexion' %}"> Se connecter </a>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>
                         {% endif %}
                         <form action="{% url 'inscription' %}" method="post">
                             {% csrf_token %}
