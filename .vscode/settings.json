@@ -1,0 +1,10 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "${workspaceFolder:djagodeme-1}/djagodemeDB.sqlite3",
+            "name": "djagodemeDB"
+        }
+    ]
+}
