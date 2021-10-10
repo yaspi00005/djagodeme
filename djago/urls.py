@@ -12,6 +12,7 @@ urlpatterns = [
     path('search/projets', views.liste_tous_projets, name='listeTousProjets'),
     path("newProjet", views.creerProjet, name="nouveauProjet"),
     path("contact", views.contact, name="contact"),
-    path("profil", views.edit_profil, name="profile")
+    path("profil", views.edit_profil, name="profile"),
+    path("newSearch", views.search, name="newSearch")
 
 ]
