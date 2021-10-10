@@ -1,0 +1,46 @@
+<div class="col-lg-12 detail-separator">
+<!--  <form class="col-md-6 col-md-offset-3 text-center" action="{% url 'newSearch' %}" method="get" accept-charset="utf-8">-->
+<!--    <div class="form-group">-->
+
+<!--    </div>-->
+<!--    <span class="help-block" id="helpBlock">Trouvez le CD de vos rêves en tapant son titre ou le nom d'un des artistes.</span>-->
+<!--  </form>-->
+
+<form class="form-inline text-center" action="{% url 'newSearch' %}" method="get" accept-charset="utf-8">
+  <div class="form-group" style="padding: 5px;">
+    <label class="sr-only" for="nom"></label>
+      <input id="nom" class="form-control" name="nom" placeholder="Chercher un projet">
+  </div>
+  <div class="radio" style="padding: 5px;">
+  <label>
+    <input type="radio" name="filter_nom_auto" id="optionsRadios1" value="nom" checked>
+    Nom
+  </label>
+</div>
+<div class="radio" style="padding: 5px;">
+  <label>
+    <input type="radio" name="filter_nom_auto" id="optionsRadios2" value="auteur">
+    Auteur
+  </label>
+</div>
+ <div class="combobox" style="padding: 5px;">
+    <select name="secteur" class="mdb-select md-form">
+
+        <option value="tous" selected>Secteur</option>
+        {% for secteur in secteurs %}
+            <option value="{{secteur}}">{{secteur}}</option>
+        {% endfor %}
+      </select>
+ </div>
+ <div class="combobox" style="padding: 5px;">
+    <select name="statut" class="mdb-select md-form">
+
+        <option value="tous" selected>Statut</option>
+        {% for cle, val in pieces.items %}
+            <option value="{{cle}}">{{val}}</option>
+        {% endfor %}
+      </select>
+ </div>
+   <button type="submit" class="btn btn-log btn-thm2">S'inscrire</button>
+</form>
+</div>
