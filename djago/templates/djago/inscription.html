@@ -7,59 +7,27 @@ Inscription
 {% endblock %}
 {% block body %}
 <section class="our-log-reg bgc-fa">
-
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-lg-6 offset-lg-3">
                 <div class="sign_up_form inner_page">
-                    <div class="heading">
-                        <h3 class="text-center">Inscrivez-vous pour commencer les bonnes choses</h3>
-                        <p class="text-center">Avez-vous un compte ? <a class="text-thm"
-                                href="{% url 'connexion' %}">Login</a></p>
-                    </div>
-                    <div class="details">
-                        {% if not erreur %}
-                        <div class="ui_kit_message_box">
-                            <div class="alert alart_style_three alert-dismissible fade show" role="alert">
-                                Votre compte a été créé avec succès.Veuillez vous connectez pour completer les
-                                informations
-                                <a href="{% url 'connexion' %}"> Se connecter </a>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
+                    {% if erreur %}
+                        <div class="heading">
+                            <h3 class="text-center">Inscrivez-vous pour commencer les bonnes choses</h3>
+                            <p class="text-center">Avez-vous un compte ? <a class="text-thm"
+                                    href="{% url 'connexion' %}">Login</a></p>
                         </div>
-                        {% endif %}
-                        <form action="{% url 'inscription' %}" method="post">
-                            {% csrf_token %}
-                            <div class="form-group">
-                                <!--  <input type="text" class="form-control" id="exampleInputName2" placeholder="Username"> -->
-                                {{ form.username }}
-                            </div>
-                            <div class="form-group">
-                                <!-- <input type="email" class="form-control" id="exampleInputEmail3"
-                                    placeholder="Email Address"> -->
-                                {{ form.email }}
-                            </div>
-                            <div class="form-group">
-                                <!--  <input type="password" class="form-control" id="exampleInputPassword4"
-                                    placeholder="Password"> -->
-                                {{ form.password1 }}
-                            </div>
-                            <div class="form-group">
-                                <!--  <input type="password" class="form-control" id="exampleInputPassword5"
-                                    placeholder="Confirm Password"> -->
-                                {{ form.password2 }}
-                            </div>
-                            <button type="submit" id="sub" class="btn btn-log btn-block btn-thm2">S'inscrire</button>
-                            <div class="divide">
-                                <span class="lf_divider">Or</span>
-                                <hr>
-                            </div>
-                            <div class="row mt40">
-                                <div class="col-lg">
-                                    <button type="submit" class="btn btn-block color-white bgc-fb mb0"><i
-                                            class="fa fa-facebook float-left mt5"></i> Facebook</button>
+                        <div class="details">
+                            <form action="{% url 'inscription' %}" method="post">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <!--  <input type="text" class="form-control" id="exampleInputName2" placeholder="Username"> -->
+                                    {{ form.username }}
+                                </div>
+                                <div class="form-group">
+                                    <!-- <input type="email" class="form-control" id="exampleInputEmail3"
+                                        placeholder="Email Address"> -->
+                                    {{ form.email }}
                                 </div>
                                 <div class="form-group">
                                     <!--  <input type="password" class="form-control" id="exampleInputPassword4"
@@ -72,14 +40,13 @@ Inscription
                                     {{ form.password2 }}
                                 </div>
                                 <button type="submit" class="btn btn-log btn-block btn-thm2">S'inscrire</button>
-                        </form>
-                    </div>
+                            </form>
+                        </div>
                     {% else %}
 
                     <div class="heading">
                         <h3 class="text-center">Votre compte a été créé avec succès.</h3>
-                        <p class="text-center">Veuillez vous connectez pour completer les informations.<a
-                                href="{% url 'connexion' %}"> Se connecter </a></p>
+                            <p  class="text-center">Veuillez vous connectez pour completer les informations.<a href="{% url 'connexion' %}"> Se connecter </a></p>
                     </div>
                     {% endif %}
                 </div>
