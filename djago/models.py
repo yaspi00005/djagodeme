@@ -48,6 +48,11 @@ class Projet(models.Model):
     donateurs = models.ManyToManyField("Utilisateur", through="deme.Don", related_name="+")
     Investisseurs = models.ManyToManyField("Utilisateur", through="deme.Financement", related_name="+")
 
+    def __str__(self):
+        if self.nom:
+            return f"{self.id}: {self.nom}"
+        return f"{self.id}"
+
 
 class Compte(models.Model):
     rib = models.CharField(null=False, blank=False, max_length=24, verbose_name='Relévé d\'identité banquaire')
