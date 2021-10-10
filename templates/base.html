@@ -68,7 +68,7 @@
 						</li>
 
 						<li class="last">
-							<a href="contact.html"><span class="title">Contact</span></a>
+							<a href="{% url 'contact' %}"><span class="title">Contact</span></a>
 						</li>
 						{% if request.user.is_authenticated %}
 						<li>
