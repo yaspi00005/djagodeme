@@ -4,6 +4,7 @@ from .forms import ConnectForm
 from .forms import CreerProjetForm
 from django.contrib.auth.decorators import login_required
 from .forms import InscriptionForm
+from .forms import ProfilForm
 from django.contrib.auth import logout
 from deme.models import Don
 # Create your views here.
