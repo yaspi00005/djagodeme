@@ -5,88 +5,457 @@ Djagodeme | Liste des projets
 {% endblock %}
 {% block body %}
 
-<section id="best-property" class="best-property bgc-f7">
-
-	{% include 'djago/searchForm.html' %}
-	{% if projets|length_is:"0" %}
-		<div class="text-center">
-		  Aucun projet.
-		</div>
-	{% else %}
-		<div class="container ovh">
-			<div class="row">
-				<div class="col-lg-6 offset-lg-3">
-					<div class="main-title text-center mb40">
-						<h2>Resultat</h2>
-						{{title}}
+<section class="our-listing bgc-f7 pb30-991">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="listing_sidebar dn db-991">
+					<div class="sidebar_content_details style3">
+						<!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+						<div class="sidebar_listing_list style2 mobile_sytle_sidebar mb0">
+							<div class="sidebar_advanced_search_widget">
+								<h4 class="mb25">Advanced Search <a class="filter_closed_btn float-right"
+										href="#"><small>Hide Filter</small> <span class="flaticon-close"></span></a>
+								</h4>
+								<ul class="sasw_list style2 mb0">
+									<li class="search_area">
+										<div class="form-group">
+											<input type="text" name="nom" class="form-control" id="exampleInputName1"
+												placeholder="keyword">
+											<label for="exampleInputEmail"><span
+													class="flaticon-magnifying-glass"></span></label>
+										</div>
+									</li>
+									<li>
+										<div class="search_option_two">
+											<div class="candidate_revew_select">
+												<select class="selectpicker w100 show-tick">
+													<option>Status</option>
+													<option>Apartment</option>
+													<option>Bungalow</option>
+													<option>Condo</option>
+													<option>House</option>
+													<option>Land</option>
+													<option>Single Family</option>
+												</select>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="search_option_two">
+											<div class="candidate_revew_select">
+												<select class="selectpicker w100 show-tick">
+													<option>Bathrooms</option>
+													<option>1</option>
+													<option>2</option>
+													<option>3</option>
+													<option>4</option>
+													<option>5</option>
+													<option>6</option>
+												</select>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="search_option_two">
+											<div class="candidate_revew_select">
+												<select class="selectpicker w100 show-tick">
+													<option>Bedrooms</option>
+													<option>1</option>
+													<option>2</option>
+													<option>3</option>
+													<option>4</option>
+													<option>5</option>
+													<option>6</option>
+												</select>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="search_option_two">
+											<div class="candidate_revew_select">
+												<select class="selectpicker w100 show-tick">
+													<option>Garages</option>
+													<option>Yes</option>
+													<option>No</option>
+													<option>Others</option>
+												</select>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="search_option_two">
+											<div class="candidate_revew_select">
+												<select class="selectpicker w100 show-tick">
+													<option>Year built</option>
+													<option>2013</option>
+													<option>2014</option>
+													<option>2015</option>
+													<option>2016</option>
+													<option>2017</option>
+													<option>2018</option>
+													<option>2019</option>
+													<option>2020</option>
+												</select>
+											</div>
+										</div>
+									</li>
+									<li class="min_area style2 list-inline-item">
+										<div class="form-group">
+											<input type="text" class="form-control" id="exampleInputName2"
+												placeholder="Min Area">
+										</div>
+									</li>
+									<li class="max_area list-inline-item">
+										<div class="form-group">
+											<input type="text" class="form-control" id="exampleInputName3"
+												placeholder="Max Area">
+										</div>
+									</li>
+									<li>
+										<div id="accordion" class="panel-group">
+											<div class="panel">
+												<div class="panel-heading">
+													<h4 class="panel-title">
+														<a href="#panelBodyRating" class="accordion-toggle link"
+															data-toggle="collapse" data-parent="#accordion"><i
+																class="flaticon-more"></i> Advanced features</a>
+													</h4>
+												</div>
+												<div id="panelBodyRating" class="panel-collapse collapse">
+													<div class="panel-body row">
+														<div class="col-lg-12">
+															<ul
+																class="ui_kit_checkbox selectable-list float-left fn-400">
+																<li>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox"
+																			class="custom-control-input"
+																			id="customCheck1">
+																		<label class="custom-control-label"
+																			for="customCheck1">Air Conditioning</label>
+																	</div>
+																</li>
+																<li>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox"
+																			class="custom-control-input"
+																			id="customCheck4">
+																		<label class="custom-control-label"
+																			for="customCheck4">Barbeque</label>
+																	</div>
+																</li>
+																<li>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox"
+																			class="custom-control-input"
+																			id="customCheck10">
+																		<label class="custom-control-label"
+																			for="customCheck10">Gym</label>
+																	</div>
+																</li>
+																<li>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox"
+																			class="custom-control-input"
+																			id="customCheck5">
+																		<label class="custom-control-label"
+																			for="customCheck5">Microwave</label>
+																	</div>
+																</li>
+																<li>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox"
+																			class="custom-control-input"
+																			id="customCheck6">
+																		<label class="custom-control-label"
+																			for="customCheck6">TV Cable</label>
+																	</div>
+																</li>
+																<li>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox"
+																			class="custom-control-input"
+																			id="customCheck2">
+																		<label class="custom-control-label"
+																			for="customCheck2">Lawn</label>
+																	</div>
+																</li>
+																<li>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox"
+																			class="custom-control-input"
+																			id="customCheck11">
+																		<label class="custom-control-label"
+																			for="customCheck11">Refrigerator</label>
+																	</div>
+																</li>
+																<li>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox"
+																			class="custom-control-input"
+																			id="customCheck3">
+																		<label class="custom-control-label"
+																			for="customCheck3">Swimming Pool</label>
+																	</div>
+																</li>
+															</ul>
+															<ul
+																class="ui_kit_checkbox selectable-list float-right fn-400">
+																<li>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox"
+																			class="custom-control-input"
+																			id="customCheck12">
+																		<label class="custom-control-label"
+																			for="customCheck12">WiFi</label>
+																	</div>
+																</li>
+																<li>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox"
+																			class="custom-control-input"
+																			id="customCheck14">
+																		<label class="custom-control-label"
+																			for="customCheck14">Sauna</label>
+																	</div>
+																</li>
+																<li>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox"
+																			class="custom-control-input"
+																			id="customCheck7">
+																		<label class="custom-control-label"
+																			for="customCheck7">Dryer</label>
+																	</div>
+																</li>
+																<li>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox"
+																			class="custom-control-input"
+																			id="customCheck9">
+																		<label class="custom-control-label"
+																			for="customCheck9">Washer</label>
+																	</div>
+																</li>
+																<li>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox"
+																			class="custom-control-input"
+																			id="customCheck13">
+																		<label class="custom-control-label"
+																			for="customCheck13">Laundry</label>
+																	</div>
+																</li>
+																<li>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox"
+																			class="custom-control-input"
+																			id="customCheck8">
+																		<label class="custom-control-label"
+																			for="customCheck8">Outdoor Shower</label>
+																	</div>
+																</li>
+																<li>
+																	<div class="custom-control custom-checkbox">
+																		<input type="checkbox"
+																			class="custom-control-input"
+																			id="customCheck15">
+																		<label class="custom-control-label"
+																			for="customCheck15">Window Coverings</label>
+																	</div>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="search_option_button">
+											<button type="submit" class="btn btn-block btn-thm">Search</button>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="row" style="padding:5px;">
-
-
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="dn db-991">
+					<div id="main2">
+						<span id="open2" class="flaticon-filter-results-button filter_open_btn style3"> Show
+							Filter</span>
+					</div>
+				</div>
+				<div class="breadcrumb_content style2 mt30-767 mb30-767">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="#">Accueil</a></li>
+						<li class="breadcrumb-item active text-thm" aria-current="page">Liste des projets</li>
+					</ol>
+					<h2 class="breadcrumb_title">Liste des projets</h2>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-4 col-xl-4">
+				<div class="sidebar_listing_list dn-991">
+					<div class="sidebar_advanced_search_widget">
+						<form action="{% url 'newSearch' %}" method="get" accept-charset="utf-8">
+							<ul class="sasw_list mb0">
+								<li class="search_area">
+									<div class="form-group">
+										<input type="text" name="nom" class="form-control" id="exampleInputName1"
+											placeholder="Chercher un projet">
+										<label for="exampleInputEmail"><span
+												class="flaticon-magnifying-glass"></span></label>
+									</div>
+								</li>
+								<li>
+									<div class="search_option_two">
+										<div class="candidate_revew_select">
+											<select name="secteur" class="selectpicker w100 show-tick">
+												<option value="tous" selected>Secteur</option>
+												{% for secteur in secteurs %}
+												<option value="{{secteur}}">{{secteur}}</option>
+												{% endfor %}
+											</select>
+										</div>
+									</div>
+								</li>
+								<li>
+									<div class="search_option_two">
+										<div class="candidate_revew_select">
+											<select name="statut" class="selectpicker w100 show-tick">
+												<option value="tous" selected>Statut</option>
+												{% for cle, val in pieces.items %}
+												<option value="{{cle}}">{{val}}</option>
+												{% endfor %}
+											</select>
+										</div>
+									</div>
+								</li>
+								<li class="min_area list-inline-item">
+									<div class="form-group">
+										<input type="radio" class="form-control" id="exampleInputName2"
+											name="filter_nom_auto" value="nom" checked>
+										Nom
+									</div>
+								</li>
+								<li class="max_area list-inline-item">
+									<div class="form-group">
+										<input type="radio" class="form-control" id="exampleInputName3"
+											name="filter_nom_auto" value="nom">
+										Auteur
+									</div>
+								</li>
+								<li>
+									<div class="search_option_button">
+										<button type="submit" class="btn btn-block btn-thm">Rechercher</button>
+									</div>
+								</li>
+							</ul>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-12 col-lg-8">
+				<div class="row">
+					<div class="grid_list_search_result">
+						<div class="col-sm-12 col-md-4 col-lg-4 col-xl-5">
+							<div class="left_area tac-xsd">
+								<p>9 Search results</p>
+							</div>
+						</div>
+						<div class="col-sm-12 col-md-8 col-lg-8 col-xl-7">
+							<div class="right_area text-right tac-xsd">
+								<ul>
+									<li class="list-inline-item"><span class="stts">Status:</span>
+										<select class="selectpicker show-tick">
+											<option>All Status</option>
+											<option>Recent</option>
+											<option>Old Review</option>
+										</select>
+									</li>
+									<li class="list-inline-item"><span class="shrtby">Sort by:</span>
+										<select class="selectpicker show-tick">
+											<option>Featured First</option>
+											<option>Featured 2nd</option>
+											<option>Featured 3rd</option>
+											<option>Featured 4th</option>
+											<option>Featured 5th</option>
+										</select>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
 					{% for projet in projets %}
-					<div class="col-sm-4 text-center">
-						<div class="feat_property">
+					<div class="col-md-6 col-lg-6">
+						<div class="properti_city home6">
 							<div class="thumb">
 								{% if projet.couverture %}
-								<img class="img-whp" src="{{projet.couverture.url}}" alt="fp1.jpg">
+								<img class="img-fluid w100" src="{{projet.couverture.url}}" alt="fp1.jpg">
 								{% else %}
-								<img class="img-whp" src="{% static 'images/logo_r.jpg' %}" alt="">
+								<img class="img-fluid w100" src="{% static 'images/logo_r.jpg' %}" alt="">
 								{% endif %}
 								<div class="thmb_cntnt">
 									<ul class="tag mb0">
 										<li class="list-inline-item"><a href="{% url 'searchProjet' projet.id %}">Plus
 												d'info</a></li>
-										<li class="list-inline-item"><a href="#">Don</a></li>
+										<li class="list-inline-item"><a href="#">{{projet.secteur}}</a></li>
 									</ul>
-									<ul class="icon mb0">
-										<li class="list-inline-item"><a href="#"><span
-													class="flaticon-transfer-1"></span></a></li>
-										<li class="list-inline-item"><a href="#"><span
-													class="flaticon-heart"></span></a></li>
-									</ul>
-									<a class="fp_price" href="#">{{projet.budget}}F<small>/cfa</small></a>
 								</div>
 							</div>
-							<div class="details">
-								<div class="tc_content">
-									<p class="text-thm">{{projet.secteur}}</p>
+							<div class="overlay">
+								<div class="details">
+									<a class="fp_price" href="#">{{projet.budget}}F<small>/cfa</small></a>
 									<h4>{{projet.nom|first}}</strong><span>{{projet.nom|reste}}</h4>
-									<p><span class="flaticon-placeholder"></span> {{projet.resume}}</p>
 									<ul class="prop_details mb0">
 										<li class="list-inline-item"><a href="#">Don: 4</a></li>
-										<li class="list-inline-item"><a href="#">financement: 2</a></li>
+										<li class="list-inline-item"><a href="#">Baths: 2</a></li>
 									</ul>
-								</div>
-								<div class="fp_footer">
-									<ul class="fp_meta float-left mb0">
-										<li class="list-inline-item"><a href="#"><img
-													src="{% static 'images/property/pposter1.png' %}"
-													alt="pposter1.png"></a></li>
-										<li class="list-inline-item"><a href="#">Ali Tufan</a></li>
-									</ul>
-									<div class="fp_pdate float-right">{{projet.date_pub}}</div>
 								</div>
 							</div>
 						</div>
 					</div>
 					{% endfor %}
+					{% if paginate %}
+					<div class="col-lg-12 mt20">
+						<div class="mbp_pagination">
+							<ul class="page_navigation">
+								{% if projets.has_previous %}
+								<li class="page-item ">
+									<a class="page-link" href="?page={{ projets.previous_page_number }}" tabindex="-1"
+										aria-disabled="true"> <span class="flaticon-left-arrow"></span> Prev</a>
+								</li>
+								{% endif %}
+								<li class="page-item"><a class="page-link" href="#">1</a></li>
+								<li class="page-item active" aria-current="page">
+									<a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+								</li>
+								<li class="page-item"><a class="page-link" href="#">3</a></li>
+								<li class="page-item"><a class="page-link" href="#">...</a></li>
+								<li class="page-item"><a class="page-link" href="#">29</a></li>
+								{% if projets.has_next %}
+								<li class="page-item">
+									<a class="page-link" href="?page={{ projets.next_page_number }}"><span
+											class="flaticon-right-arrow"></span></a>
+								</li>
+								{% endif %}
+							</ul>
+						</div>
+					</div>
+					{% endif %}
+				</div>
+			</div>
 		</div>
-	{% endif %}
-	{% if paginate %}
-  <div class="clearfix"></div>
-  <nav aria-label="">
-    <ul class="pager">
-      {% if projets.has_previous %}
-          <li><a href="?page={{ projets.previous_page_number }}">Précédent</a></li>
-      {% endif %}
-      {% if projets.has_next %}
-          <li><a href="?page={{ projets.next_page_number }}">Suivant</a></li>
-      {% endif %}
-    </ul>
-  </nav>
-{% endif %}
+	</div>
 </section>
 {% endblock %}
