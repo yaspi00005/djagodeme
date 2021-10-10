@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}
+    Nouveau don
+{% endblock %}
+{% block body %}
+    <br> <br>
+    <p> Remplissez le formulaire pour faire un don.</p>
+    <form action="{% url 'don' %}" method="post" >
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="wrapper">
+                {{ field.errors }}
+                <span>{{ field.label_tag }}</span>
+                {{ field }}
+                {% comment %} {% if field.help_text %}
+                    <p class="help">{{ field.help_text|safe }}</p>
+                {% endif %} {% endcomment %}
+            </div>
+        {% endfor %}
+        <p>
+            <input type="submit" value="Faire un don" class="button2 color3"/>
+            <a href="{% url 'liste_tous_dons' %}"> Retour à la liste des dons </a>
+        </p>
+    </form>
+{% endblock %}
+
+
+{% comment %} {% comment %} {% if erreur %}
+<h1>Bienvenue sur Djago dèmè</h1>
+<h2>Désolez, Une rreur est survenu veilliez reessayer</h2>
+{% else %} 
+<h1>Bienvenue sur Djago dèmè !</h1>
+<p>Souhaitez ous faire un don</p>
+<form action="." method="post">
+  {% csrf_token %} {{ form.as_p }}
+  <p><input type="submit" value="Donation" /> &nbsp; &nbsp;</p>
+</form>
+ {% endif %}  {% endcomment %}
+
