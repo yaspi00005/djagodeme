@@ -33,3 +33,19 @@ class InscriptionForm(UserCreationForm):
             attrs={'class': 'form-control', 'placeholder': 'yaya'}))
         password2 = forms.CharField(max_length=30, widget=forms.TextInput(
             attrs={'class': 'form-control', 'placeholder': 'yaya'}))
+
+
+class ProfilForm(forms.Form):
+    login = forms.CharField(label="Nom d'utilisateur", max_length=30, widget=forms.TextInput(
+        attrs={'class': 'form-control', 'placeholder': 'Nom d\'utilisateur'}))
+    email = forms.EmailField(label='Email', max_length=40, widget=forms.TextInput(
+        attrs={'class': 'form-control', 'placeholder': 'Email'}))
+    numid = forms.CharField(label="Numéro d'identification", max_length=40, widget=forms.TextInput(
+        attrs={'class': 'form-control', 'placeholder': "Numéro d'identification"}))
+    pieceid = forms.CharField(label="Pièce d'identité", max_length=40, widget=forms.TextInput(
+        attrs={'class': 'form-control', 'placeholder': "Pièce d'identité"}))
+    adresse = forms.CharField(label="Adresse", max_length=40, widget=forms.TextInput(
+        attrs={'class': 'form-control', 'placeholder': "Adresse"}))
+    tel = forms.CharField(label="Téléphone", max_length=40, widget=forms.TextInput(
+        attrs={'class': 'form-control', 'placeholder': "Téléphone"}))
+    photo = forms.ImageField(label="Photo")
