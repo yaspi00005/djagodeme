@@ -38,27 +38,27 @@ Djagodeme | Liste des projets
 										<li class="list-inline-item"><a href="#"><span
 													class="flaticon-heart"></span></a></li>
 									</ul>
-									<a class="fp_price" href="#">$13,000<small>/F cfa</small></a>
+									<a class="fp_price" href="#">{{projet.budget}}F<small>/cfa</small></a>
 								</div>
 							</div>
 							<div class="details">
 								<div class="tc_content">
-									<p class="text-thm">Apartment</p>
+									<p class="text-thm">{{projet.secteur}}</p>
 									<h4>{{projet.nom|first}}</strong><span>{{projet.nom|reste}}</h4>
 									<p><span class="flaticon-placeholder"></span> {{projet.resume}}</p>
 									<ul class="prop_details mb0">
-										<li class="list-inline-item"><a href="#">Beds: 4</a></li>
-										<li class="list-inline-item"><a href="#">Baths: 2</a></li>
-										<li class="list-inline-item"><a href="#">Sq Ft: 5280</a></li>
+										<li class="list-inline-item"><a href="#">Don: 4</a></li>
+										<li class="list-inline-item"><a href="#">financement: 2</a></li>
 									</ul>
 								</div>
 								<div class="fp_footer">
 									<ul class="fp_meta float-left mb0">
-										<li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png"
+										<li class="list-inline-item"><a href="#"><img
+													src="{% static 'images/property/pposter1.png' %}"
 													alt="pposter1.png"></a></li>
 										<li class="list-inline-item"><a href="#">Ali Tufan</a></li>
 									</ul>
-									<div class="fp_pdate float-right">4 years ago</div>
+									<div class="fp_pdate float-right">{{projet.date_pub}}</div>
 								</div>
 							</div>
 						</div>

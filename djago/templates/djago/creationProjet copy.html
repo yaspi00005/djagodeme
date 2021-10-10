@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}
+    Nouveau projet
+{% endblock %}
+{% block body %}
+    <br> <br>
+    <p> Remplissez le formulaire pour créer votre projet.</p>
+    <form action="{% url 'nouveauProjet' %}" method="post" id="ContactForm">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="wrapper">
+                {{ field.errors }}
+                <span>{{ field.label_tag }}</span>
+                {{ field }}
+                {% if field.help_text %}
+                    <p class="help">{{ field.help_text|safe }}</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <p>
+            <input type="submit" value="Créer le pari" class="button2 color3"/>
+            <a href="{% url 'listeProjet' budget=0 statut='SDI' %}"> Retour à la liste des projets </a>
+        </p>
+    </form>
+{% endblock %}
