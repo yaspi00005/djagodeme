@@ -27,3 +27,5 @@ $(document).on('click', '#id_password2', function () {
 		document.getElementById('sub').disabled = true
 	}
 });
+
+

@@ -14,10 +14,10 @@ class ConnectForm(forms.Form):
 class CreerProjetForm(forms.ModelForm):
     class Meta:
         model = Projet
-        nom = forms.CharField(max_length=30, widget=forms.TextInput(
+        """ nom = forms.CharField(max_length=30, widget=forms.TextInput(
             attrs={'class': 'form-control', 'placeholder': 'Nom du projet'}))
         resume = forms.CharField(max_length=30, widget=forms.TextInput(
-            attrs={'class': 'form-control', 'placeholder': 'Resume'}))
+            attrs={'class': 'form-control', 'placeholder': 'Resume'})) """
         exclude = ("user", "donateurs", "Investisseurs")
 
 

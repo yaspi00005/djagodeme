@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load static my_tags %}
+{% block title %}
+Djagodeme | Liste des projets
+{% endblock %}
+{% block body %}
+
+<section id="best-property" class="best-property bgc-f7">
+
+	{% include 'djago/searchForm.html' %}
+	{% if projets|length_is:"0" %}
+		<div class="text-center">
+		  Aucun projet.
+		</div>
+	{% else %}
+		<div class="container ovh">
+			<div class="row">
+				<div class="col-lg-6 offset-lg-3">
+					<div class="main-title text-center mb40">
+						<h2>Resultat</h2>
+						{{title}}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row" style="padding:5px;">
+
+
+					{% for projet in projets %}
+					<div class="col-sm-4 text-center">
+						<div class="feat_property">
+							<div class="thumb">
+								{% if projet.couverture %}
+								<img class="img-whp" src="{{projet.couverture.url}}" alt="fp1.jpg">
+								{% else %}
+								<img class="img-whp" src="{% static 'images/logo_r.jpg' %}" alt="">
+								{% endif %}
+								<div class="thmb_cntnt">
+									<ul class="tag mb0">
+										<li class="list-inline-item"><a href="{% url 'searchProjet' projet.id %}">Plus
+												d'info</a></li>
+										<li class="list-inline-item"><a href="#">Don</a></li>
+									</ul>
+									<ul class="icon mb0">
+										<li class="list-inline-item"><a href="#"><span
+													class="flaticon-transfer-1"></span></a></li>
+										<li class="list-inline-item"><a href="#"><span
+													class="flaticon-heart"></span></a></li>
+									</ul>
+									<a class="fp_price" href="#">{{projet.budget}}F<small>/cfa</small></a>
+								</div>
+							</div>
+							<div class="details">
+								<div class="tc_content">
+									<p class="text-thm">{{projet.secteur}}</p>
+									<h4>{{projet.nom|first}}</strong><span>{{projet.nom|reste}}</h4>
+									<p><span class="flaticon-placeholder"></span> {{projet.resume}}</p>
+									<ul class="prop_details mb0">
+										<li class="list-inline-item"><a href="#">Don: 4</a></li>
+										<li class="list-inline-item"><a href="#">financement: 2</a></li>
+									</ul>
+								</div>
+								<div class="fp_footer">
+									<ul class="fp_meta float-left mb0">
+										<li class="list-inline-item"><a href="#"><img
+													src="{% static 'images/property/pposter1.png' %}"
+													alt="pposter1.png"></a></li>
+										<li class="list-inline-item"><a href="#">Ali Tufan</a></li>
+									</ul>
+									<div class="fp_pdate float-right">{{projet.date_pub}}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+		</div>
+	{% endif %}
+	{% if paginate %}
+  <div class="clearfix"></div>
+  <nav aria-label="">
+    <ul class="pager">
+      {% if projets.has_previous %}
+          <li><a href="?page={{ projets.previous_page_number }}">Précédent</a></li>
+      {% endif %}
+      {% if projets.has_next %}
+          <li><a href="?page={{ projets.next_page_number }}">Suivant</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+{% endif %}
+</section>
+{% endblock %}
