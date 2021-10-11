@@ -22,6 +22,7 @@ from djago import views
 urlpatterns = [
     path('nimda/', admin.site.urls),
     path('djago/', include("djago.urls")),
+    path('deme/', include("deme.urls")),
     path('', include("djago.urls"))
 ]
 
