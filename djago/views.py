@@ -150,7 +150,7 @@ def liste_tous_projets(request):
                 trouve = True
         if trouve is not True:
             secteurs.append(proj.secteur)
-    paginator = Paginator(projet_list, 15)
+    paginator = Paginator(projet_list, 4)
     page = request.GET.get('page')
     try:
         projets = paginator.page(page)
@@ -164,7 +164,8 @@ def liste_tous_projets(request):
         'projets': projets,
         'paginate': True,
         'secteurs': secteurs,
-        'pieces': CHOIX_PIECES
+        'pieces': CHOIX_PIECES,
+        'page': page
     }
     # projets = Projet.objects.all()
     return render(request, 'djago/listeTousProjets.html', context)
@@ -204,7 +205,8 @@ def search(request):
             projet_list = Projet.objects.filter(
                 Q(user__user__first_name__icontains=nom) | Q(user__user__last_name__icontains=nom))
     if not projet_list.exists():
-        projet_list = Projet.objects.filter(user__user__username__icontains=nom)
+        projet_list = Projet.objects.filter(
+            user__user__username__icontains=nom)
 
     if secteur != 'tous':
         title = title + ", Secteur: '{}'".format(secteur)

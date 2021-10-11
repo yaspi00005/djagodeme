@@ -16,7 +16,7 @@
 	<!-- Responsive stylesheet -->
 	<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
 	<!-- Title -->
-	<title>Djago dèmè - Real Estate HTML Template</title>
+	<title>Djago dèmè -</title>
 	<!-- Favicon -->
 	<link href="images/favicon.ico" sizes="128x128" rel="shortcut icon" type="image/x-icon" />
 	<link href="images/favicon.ico" sizes="128x128" rel="shortcut icon" />
@@ -77,9 +77,9 @@
 							<ul>
 								<li><a href="#">Mes projet</a></li>
 								<li><a href="#">Nouveau projet</a></li>
-								<li><a href="#">Mes don</a></li>
-								<li><a href="#">Nouveau don</a></li>
-								<li><a href="#">Mes financements</a></li>
+								<li><a href="{% url 'liste_tous_dons' %}">Mes don</a></li>
+								<li><a href="{% url 'don' %}">Nouveau don</a></li>
+								<li><a href="{% url 'liste_financement' %}">Mes financements</a></li>
 								<li><a href="#">Nouveau financement</a></li>
 							</ul>
 						</li>
@@ -303,7 +303,7 @@
 									<li class="nav-item">
 										<a class="nav-link" id="pills-profile-tab" data-toggle="pill"
 											href="#pills-profile" role="tab" aria-controls="pills-profile"
-											aria-selected="false">Rent</a>
+											aria-selected="false">Projets</a>
 									</li>
 								</ul>
 
@@ -427,7 +427,7 @@
 					</div>
 					<div class="col-lg-6 col-xl-6">
 						<div class="copyright-widget text-right">
-							<p>© 2020 Find House. Made with love.</p>
+							<p>© 2021 Djago deme</p>
 						</div>
 					</div>
 				</div>
@@ -454,8 +454,12 @@
 	<script type="text/javascript" src="{% static 'js/slider.js'  %}"></script>
 	<script type="text/javascript" src="{% static 'js/timepicker.js'  %}"></script>
 	<!-- Custom script for all pages -->
+	<script type="text/javascript" src="{% static 'js/smartuploader.js'  %}"></script>
+	<script type="text/javascript" src="{% static 'js/dashboard-script.js'  %}"></script>
+	<script type="text/javascript" src="{% static 'js/progressbar.js'  %}"></script>
 	<script type="text/javascript" src="{% static 'js/script.js'  %}"></script>
 	<script type="text/javascript" src="{% static 'js/form.js'  %}"></script>
+	<script type="text/javascript" src="{% static 'js/yaya.js'  %}"></script>
 </body>
 
 </html>

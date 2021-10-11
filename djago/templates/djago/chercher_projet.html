@@ -38,7 +38,8 @@ Djagodeme | Liste des projets
                             </div>
                             <div class="fp_footer">
                                 <ul class="fp_meta float-left mb0">
-                                    <li class="list-inline-item"><a href="#"><img src="images/property/pposter1.png"
+                                    <li class="list-inline-item"><a href="#"><img
+                                                src="{% static 'images/property/pposter1.png' %}"
                                                 alt="pposter1.png"></a></li>
                                     <li class="list-inline-item"><a href="#">{{ligne.user.nom}}</a></li>
                                     <li class="list-inline-item"><a href="#"><span
@@ -53,20 +54,32 @@ Djagodeme | Liste des projets
             </div>
             <div class="col-lg-4 col-xl-4">
                 <div class="terms_condition_widget">
-                    <h4 class="title">Categories Property</h4>
+                    <h4 class="title">Information du porteur</h4>
                     <div class="widget_list">
                         <ul class="list_details">
-                            <li><a href="#"><i class="fa fa-caret-right mr10"></i>Don <span
-                                        class="float-right">{{ligne.Investisseurs}}
-                                    </span></a></li>
-                            <li><a href="#"><i class="fa fa-caret-right mr10"></i>Condo <span class="float-right">12
-                                        properties</span></a></li>
-                            <li><a href="#"><i class="fa fa-caret-right mr10"></i>Family House <span
-                                        class="float-right">8 properties</span></a></li>
-                            <li><a href="#"><i class="fa fa-caret-right mr10"></i>Modern Villa <span
-                                        class="float-right">26 properties</span></a></li>
-                            <li><a href="#"><i class="fa fa-caret-right mr10"></i>Town House <span
-                                        class="float-right">89 properties</span></a></li>
+                            <li><a href="#"><i class="fa fa-caret-right mr10"></i>Prénom <span class="float-right">
+                                        {{ligne.user.user.first_name}} </span></a></li>
+                            <li><a href="#"><i class="fa fa-caret-right mr10"></i>Nom <span
+                                        class="float-right">{{ligne.user.user.last_name}}</span></a></li>
+                            <li><a href="#"><i class="fa fa-caret-right mr10"></i>Adresse <span class="float-right">
+                                        {{ligne.user.adresse}}</span></a></li>
+                            <li><a href="#"><i class="fa fa-caret-right mr10"></i>E-mail <span class="float-right">
+                                        {{ligne.user.user.email}}</span></a></li>
+                            <li><a href="#"><i class="fa fa-caret-right mr10"></i>Téléphone <span
+                                        class="float-right">{{ligne.user.tel}}</span></a></li>
+                            <li><a href="#"><i class="fa fa-caret-right mr10"></i>type de carte <span
+                                        class="float-right">{{ligne.user.pieceid}}</span></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-caret-right mr10"></i>N° Carte d'identité <span
+                                        class="float-right">{{ligne.user.numid}}</span></a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-caret-right mr10"></i>Statde du projet <span
+                                        class="float-right">{{ligne.statut}}</span></a>
+                            </li>
+                            <li>
+                                <img style="border-radius: 10px; border:1px solid salmon" class="img-whp"
+                                    src="{{ligne.user.photo.url}}" alt="fp1.jpg">
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -86,7 +99,6 @@ Djagodeme | Liste des projets
 </section>
 
 <a class="scrollToHome" href="#"><i class="flaticon-arrows"></i></a>
-<p> Un projet trouvé, les infos sont : <strong> {{ligne.nom}} </strong> </p>
 {% else %}
 <p> Le projet d'id <strong> {{id_projet}} </strong> n'existe pas </p>
 {% endif %}
