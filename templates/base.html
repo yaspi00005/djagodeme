@@ -302,7 +302,7 @@
 									</li>
 									<li class="nav-item">
 										<a class="nav-link" id="pills-profile-tab" data-toggle="pill"
-											href="#pills-profile" role="tab" aria-controls="pills-profile"
+											href="{% url 'listeTousProjets' %}" role="tab" aria-controls="pills-profile"
 											aria-selected="false">Projets</a>
 									</li>
 								</ul>
@@ -318,12 +318,13 @@
 						<ul class="home4_iconbox mb0">
 							<li class="list-inline-item">
 								<div class="icon"><span class="flaticon-house"></span>
-									<p>Mes projets</p>
+									<p> <a href="{% url 'listeTousProjets' %}">Mes projets</a></a></p>
 								</div>
 							</li>
 							<li class="list-inline-item">
 								<div class="icon"><span class="flaticon-house-2"></span>
-									<p>Mes Don</p>
+									<p class="text-whrite"> <a href="{% url 'liste_tous_dons' %}">Mes projets</a></a>
+									</p>
 								</div>
 							</li>
 

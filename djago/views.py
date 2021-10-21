@@ -30,6 +30,7 @@ def inscription(request):
     form.fields['email'].widget.attrs = {'class': 'form-control'}
     form.fields['password1'].widget.attrs = {'class': 'form-control'}
     form.fields['password2'].widget.attrs = {'class': 'form-control'}
+
     if form.is_valid():
         user = form.save(commit=False)
         from .models import Utilisateur
@@ -88,6 +89,9 @@ def lister_projets(request, budget, statut='C'):
 @login_required(login_url="accueil")
 def creerProjet(request):
     form = CreerProjetForm(request.POST or None)
+    from .models import Utilisateur
+    user = request.user
+    ligne = Utilisateur.objects.get(user=request.user)
     if form.is_valid():
         form.user = request.user
         form.save()
@@ -123,6 +127,7 @@ def edit_profil(request):
         ligne.save()
         # form.save()
         return redirect(accueil)
+
     return render(request, "djago/profile.html", locals())
 
     return HttpResponse(request)
