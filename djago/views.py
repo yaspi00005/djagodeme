@@ -1,7 +1,7 @@
 from django.db.models import Q
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .forms import ConnectForm
+from .forms import ConnectForm, ProfilImageForm
 from .forms import CreerProjetForm
 from django.contrib.auth.decorators import login_required
 from .forms import InscriptionForm
@@ -102,10 +102,10 @@ def creerProjet(request):
 @login_required(login_url="accueil")
 def edit_profil(request):
     form = ProfilForm(request.POST or None)
+    form2 = ProfilImageForm(request.POST or None, request.FILES)
     from .models import Utilisateur
     user = request.user
     ligne = Utilisateur.objects.get(user=request.user)
-    # print(ligne)
     # form.login = ligne.request.user.username
     form.fields["login"].initial = request.user.username
     form.fields["email"].initial = request.user.email
@@ -113,20 +113,31 @@ def edit_profil(request):
     form.fields["pieceid"].initial = ligne.pieceid
     form.fields["adresse"].initial = ligne.adresse
     form.fields["tel"].initial = ligne.tel
-    form.fields["photo"].initial = ligne.photo
+    form2.fields["photo"].initial = ligne.photo
+
+    # print(form)
+    #print(form.fields["pieceid"].label)
+    # print(form.cleaned_data["login"])
+    # print(form.cleaned_data["numid"])
+    # print(form.cleaned_data["pieceid"])
+    # print(form.cleaned_data["adresse"])
+    # print(form.cleaned_data["tel"])
+    # print(form.cleaned_data["photo"])
 
     if form.is_valid():
-        user.email = form.cleaned_data["email"]
-        user.username = form.cleaned_data["login"]
-        user.save()
-        ligne.numid = form.cleaned_data["numid"]
-        ligne.pieceid = form.cleaned_data["pieceid"]
-        ligne.adresse = form.cleaned_data["adresse"]
-        ligne.tel = form.cleaned_data["tel"]
-        ligne.photo = form.cleaned_data["photo"]
-        ligne.save()
-        # form.save()
-        return redirect(accueil)
+        if form2.is_valid():
+            user.email = form.cleaned_data["email"]
+            user.username = form.cleaned_data["login"]
+            user.save()
+            ligne.numid = form.cleaned_data["numid"]
+            ligne.pieceid = form.cleaned_data["pieceid"]
+            ligne.adresse = form.cleaned_data["adresse"]
+            ligne.tel = form.cleaned_data["tel"]
+            ligne.photo = form2.cleaned_data["photo"]
+            #print(form.cleaned_data["photo"])
+            ligne.save()
+            # form.save()
+            return redirect(accueil)
 
     return render(request, "djago/profile.html", locals())
 

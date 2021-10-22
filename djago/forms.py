@@ -1,7 +1,20 @@
+from string import Template
+
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django import forms
+from django.utils.safestring import mark_safe
+
 from .models import Projet
+
+
+class PictureWidget(forms.widgets.Widget):
+    def render(self, name, value, attrs=None, **kwargs):
+        # html =
+        html = Template("""
+        <img src="media/$link" width="100" height=120/><br><br>
+        <input type="file" name="photo" accept="image/*" id="id_photo"><br><br>""")
+        return mark_safe(html.substitute(link=value))
 
 
 class ConnectForm(forms.Form):
@@ -49,7 +62,7 @@ class InscriptionForm(UserCreationForm):
 
 class ProfilForm(forms.Form):
     login = forms.CharField(label="Nom d'utilisateur", max_length=30, widget=forms.TextInput(
-        attrs={'class': 'form-control', 'placeholder': 'Nom d\'utilisateur'}))
+        attrs={'class': 'form-control', 'placeholder': "Nom d'utilisateur"}))
     email = forms.EmailField(label='Email', max_length=40, widget=forms.TextInput(
         attrs={'class': 'form-control', 'placeholder': 'Email'}))
     numid = forms.CharField(label="Numéro d'identification", max_length=40, widget=forms.TextInput(
@@ -60,4 +73,7 @@ class ProfilForm(forms.Form):
         attrs={'class': 'form-control', 'placeholder': "Adresse"}))
     tel = forms.CharField(label="Téléphone", max_length=40, widget=forms.TextInput(
         attrs={'class': 'form-control', 'placeholder': "Téléphone"}))
+
+
+class ProfilImageForm(forms.Form):
     photo = forms.ImageField(label="Photo")
