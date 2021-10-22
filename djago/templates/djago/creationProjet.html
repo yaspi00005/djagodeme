@@ -12,7 +12,7 @@ Nouveau projet
                         <h3 class="text-center">Créez un projet</h3>
                     </div>
                     <div class="details">
-                        <form ction="{% url 'nouveauProjet' %}" method="post">
+                        <form ction="{% url 'nouveauProjet' %}" method="post" enctype="multipart/form-data">
                             {% csrf_token %}
                             <div class="form-group">
                                 <!--  <input type="text" class="form-control" id="exampleInputName2" placeholder="Username"> -->

@@ -10,9 +10,11 @@ class CreationDon(ModelForm):
         model = Don
         exclude = ['utilisateur']
 
-    # Projet = forms.CharField(max_length=30)
-    # utilisateur = forms.CharField(max_length=30, disabled=True)
-    # Montant = forms.FloatField(required=True)
+        projet = forms.CharField(max_length=30, widget=forms.TextInput(
+            attrs={'class': 'form-control', 'placeholder': 'Resume'}))
+        widgets = {
+            "montant": forms.TextInput(attrs={'placeholder': 'Montant', 'class': 'form-control'}),
+        }
 
 
 class CreationFinance(ModelForm):
