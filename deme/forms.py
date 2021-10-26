@@ -22,6 +22,26 @@ class CreationFinance(ModelForm):
         model = Financement
         exclude = ['utilisateur']
 
-        widgets = {
-            "montant": forms.TextInput(attrs={'placeholder': 'Montant', 'class': 'form-control'}),
-        }
+
+class DonProjet(forms.Form):
+    utilisateur = forms.CharField(label="Utilisateur", max_length=40, disabled=True, widget=forms.TextInput(
+        attrs={'class': 'form-control', 'placeholder': "Montant du don"}))
+    projet = forms.CharField(label="Projet", max_length=40, disabled=True, widget=forms.TextInput(
+        attrs={'class': 'form-control', 'placeholder': "Montant du don"}))
+    montant = forms.IntegerField(label="Montant",  widget=forms.TextInput(
+        attrs={'class': 'form-control', 'placeholder': "Montant du don"}))
+
+
+class FinanceProjet(forms.Form):
+    class Meta:
+        model = Financement
+        utilisateur = forms.CharField(label="Utilisateur", max_length=40, disabled=True, widget=forms.TextInput(
+            attrs={'class': 'form-control', 'placeholder': "Montant du don"}))
+        projet = forms.CharField(label="Projet", max_length=40, disabled=True, widget=forms.TextInput(
+            attrs={'class': 'form-control', 'placeholder': "Montant du don"}))
+        montant = forms.IntegerField(label="Montant",  widget=forms.TextInput(
+            attrs={'class': 'form-control', 'placeholder': "Montant du don"}))
+        duree = forms.IntegerField(label="Duée",  widget=forms.TextInput(
+            attrs={'class': 'form-control', 'placeholder': "Montant du don"}))
+        date_debut = forms.IntegerField(label="Date",  widget=forms.TextInput(
+            attrs={'class': 'form-control', 'placeholder': "Montant du don"}))

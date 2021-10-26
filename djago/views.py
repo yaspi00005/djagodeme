@@ -153,10 +153,11 @@ def liste_tous_projets(request):
     projet_list = Projet.objects.exclude(statut='C')
     project_for_search = projet_list
     secteurs = []
-    CHOIX_PIECES = {'CNI': "Carte Nationale d'Identité",
-                    'NINA': "NINA",
-                    'CIC': "Carte d'Identité Consulaire",
-                    'PASSPORT': "PASSPORT"
+    CHOIX_PIECES = {'SDI': "Stade d'Idée",
+                    'EGN': "En Gestation",
+                    'JLC': "Juste Lancé",
+                    'EAE': "En Activité",
+                    'C': "Cloturé"
                     }
     trouve = False
     for proj in project_for_search:
