@@ -8,45 +8,38 @@ Djagodeme | Liste des dons
 	<div class="box1">
 		<div class="line1">
 			<div class="line2 wrapper">
-				{% for don in dons %}
-				{% if forloop.counter|modulo:3 == 1 %}
-				<section class="col1">
-					{% elif forloop.counter|modulo:3 == 2 %}
-					<section class="col1 pad_left1">
-						{% else %}
-						<section class="col1 pad_left1">
-							{% endif %}
-							<h2><strong>{{don.projet.nom|first}}</strong><span>{{don.projet.nom|reste}}</span></h2>
-							{{don.utilisateur}} <br>
-                            {{don.montant}}
-							{% comment %} <a href="{% url 'searchProjet' projet.id %}" class="button1">Plus d'info</a> {% endcomment %}
-						</section>
-						{% if forloop.counter|divisibleby:3 %}
-			</div>
-		</div>
-		<div class="line1">
-			<div class="line2 wrapper">
-				{% endif %}
-				{% empty %}
-				Aucun don pour le moment
-				{% endfor %}
+				<div class="shortcode_widget_table">
+					<h4>Il y'a {{ count }} dons collectés pour ce projet</h4>
+					<div class="ui_kit_table">
+						<table class="table">
+							<thead class="thead-light">
+								<tr>
+									<th scope="col">Donnateur</th>
+									<th scope="col">Montant</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for don in dons %}
+
+
+								<tr>
+									<td>{{ don.utilisateur }}</td>
+									<td>{{ don.montant }}</td>
+									<!-- 									<input type="text" value="{{ don.montant }}">
+ -->
+								</tr>
+								{% endfor %}
+								<tr>
+									<td>Total</td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
-{% endblock %} 
-
-{% comment %}
-{% block title %}
-Liste des dons
+</div>
 {% endblock %}
-{% block body %}
-
-<h1> Liste des dons faites </h1>
-Les dons {{montant}} sur projet {{projet}} <br>
-{% for ligne in dons %}
-{{ligne}}
-{% empty %}
-inexistants pour le moment
-{% endfor %}
-{% endblock %} {% endcomment %}
