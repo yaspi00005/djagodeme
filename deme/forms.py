@@ -19,3 +19,12 @@ class CreationFinance(ModelForm):
     class Meta:
         model = Financement
         exclude = ['utilisateur']
+
+
+class DonProjet(forms.Form):
+    utilisateur = forms.CharField(label="Utilisateur", max_length=40, disabled=True, widget=forms.TextInput(
+        attrs={'class': 'form-control', 'placeholder': "Montant du don"}))
+    projet = forms.CharField(label="Projet", max_length=40, disabled=True, widget=forms.TextInput(
+        attrs={'class': 'form-control', 'placeholder': "Montant du don"}))
+    montant = forms.IntegerField(label="Montant",  widget=forms.TextInput(
+        attrs={'class': 'form-control', 'placeholder': "Montant du don"}))
