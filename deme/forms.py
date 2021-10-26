@@ -21,3 +21,7 @@ class CreationFinance(ModelForm):
     class Meta:
         model = Financement
         exclude = ['utilisateur']
+
+        widgets = {
+            "montant": forms.TextInput(attrs={'placeholder': 'Montant', 'class': 'form-control'}),
+        }
